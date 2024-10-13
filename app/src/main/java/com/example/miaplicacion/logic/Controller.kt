@@ -17,10 +17,12 @@ class Controller() {
 
     fun ClientDelController(id: Int) : Boolean = myListClient.removeAll{ it.id==id}
 
-    fun ClientUpdateController(id : Int, name : String): Boolean{
+    fun ClientUpdateController(id : Int, name : String, apellido: String, telefono: Int): Boolean{
         val findClient: Client? = myListClient.find { it.id == id }
         return findClient?.let{
             it.name = name
+            it.apellido= apellido
+            it.telefono=telefono
             true
         }?:false
     }
@@ -40,7 +42,7 @@ class Controller() {
         var primeros3 : Int = Random.nextInt(100,1000)
         var segundos3 : Int = Random.nextInt(1,1000)
         var ultimos3 : Int = Random.nextInt(1,1000)
-        var numero: Int = (primeros3*1000000)+segundos3*(segundos3*1000)+ultimos3
+        var numero: Int = (primeros3*1000000)+(segundos3*1000)+ultimos3
         return numero
     }
 }

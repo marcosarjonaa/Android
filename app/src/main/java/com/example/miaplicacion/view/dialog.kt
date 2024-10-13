@@ -16,6 +16,10 @@ class dialog(var controller: Controller) {
 
     }
 
+    fun devIDrandom(){
+
+    }
+
     fun show(typeAction: Int) {
         listener?.let {
             val posibleId = controller.devIDrandom()
@@ -44,7 +48,6 @@ class dialog(var controller: Controller) {
         listener!!.ClientUpdate(id, name, apellido, numero)
     }
 
-    //simula el pulsado del botón aceptar del dialogo. Este recoge los datos del usuario.
     private fun onAccept() {
         var numero = controller.devIDrandom()
         listener!!.ClientAdd(RepositoryClient.incrementPrimary(), "NUEVO", "CLIENTE", numero)
