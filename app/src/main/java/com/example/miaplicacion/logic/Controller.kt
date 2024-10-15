@@ -23,7 +23,7 @@ class Controller() {
             it.name = name
             it.apellido= apellido
             it.telefono=telefono
-            
+
             true
         }?:false
     }
